@@ -8,7 +8,7 @@ copyright:           "2023"
 
 extra-source-files:
 - README.md
-- CHANGELOG.md
+# - CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -33,22 +33,26 @@ dependencies:
 
 ghc-options:
 - -Wall
-- -Werror=incomplete-patterns
 - -Wcompat
+- -Werror=incomplete-patterns
 - -Widentities
 - -Wincomplete-record-updates
 - -Wincomplete-uni-patterns
 - -Wmissing-export-lists
 - -Wmissing-home-modules
+- -Wno-missing-export-lists
+- -Wno-missing-signatures
+- -Wno-name-shadowing
+- -Wno-unused-imports
+- -Wno-unused-matches
+- -Wno-unused-top-binds
 - -Wpartial-fields
 - -Wredundant-constraints
-- -Wno-missing-export-lists
-- -Wno-unused-imports
-- -Wno-unused-top-binds
-- -Wno-missing-signatures
 
 library:
   source-dirs: src
+  build-tools:
+  - happy
 
 executables:
   stream-types2-exe:

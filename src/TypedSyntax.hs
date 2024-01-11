@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveAnyClass, DeriveFunctor, DeriveFoldable #-}
+{-# LANGUAGE DeriveTraversable #-}
 module TypedSyntax where
 
 import Values (Lit)
@@ -26,6 +26,6 @@ data TermF a =
     | TmWait Var a
     | TmCut Var a a
     | TmHistPgm Hist.Term
-    deriving (Functor,Applicative,Monad,Foldable)
+    deriving (Functor,Foldable,Traversable)
 
 data Term = Term (Ctx Var Ty) (TermF Term) Ty

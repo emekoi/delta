@@ -19,7 +19,6 @@ module Types (
   closeTy,
   reparameterizeTy,
   reparameterizeCtx,
-  genOf,
   genSequenceOf
 ) where
 
